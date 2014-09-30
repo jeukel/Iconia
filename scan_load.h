@@ -10,6 +10,10 @@
 using namespace std;
 using namespace cv;
 
+/*!
+ * \brief The scan_load class
+ *  Header for the scan & load pictures.
+ */
 class scan_load
 {
 public:

@@ -55,32 +55,52 @@ private:
     interfaceNode<K>* _previous;
 };
 
+/*!
+ * Simple list node constructor implementing
+ */
 template <typename K>
 SimpleListNode<K>::SimpleListNode() {
     this->_next = 0;
     this->_element = 0;
 }
 
+/*!
+ * Template::Simple list node destructor.
+ */
 template <typename K>
-SimpleListNode<K>::~SimpleListNode() {
+SimpleListNode<K>::~SimpleListNode(){
 }
-template <typename K>
-void SimpleListNode<K>::setElement(K pElement){this->_element = pElement;}
 
+/*!
+ * Template::Set element on a node.
+ */
 template <typename K>
-K* SimpleListNode<K>::getElement(){return &(this->_element);}
+void SimpleListNode<K>::setElement(K pElement){
+    this->_element = pElement;
+}
 
+/*!
+ * Template::Get Element
+ */
 template <typename K>
-void SimpleListNode<K>::setNext(SimpleListNode<K> *pNextNode){this->_next = pNextNode;}
+K* SimpleListNode<K>::getElement(){
+    return &(this->_element);
+}
 
+/*!
+ * Template::Set next
+ */
 template <typename K>
-SimpleListNode<K>* SimpleListNode<K>::getNext(){return (SimpleListNode<K>*)this->_next;}
+void SimpleListNode<K>::setNext(SimpleListNode<K> *pNextNode){
+    this->_next = pNextNode;
+}
 
+/*!
+ * Template::Get Next
+ */
 template <typename K>
-void SimpleListNode<K>::setPrevious(SimpleListNode<K>* pNextNode){this->_next = pNextNode;}
-
-template <typename K>
-SimpleListNode<K>* SimpleListNode<K>::getPrevious(){return (SimpleListNode<K>*)this->_previous;}
-
+SimpleListNode<K>* SimpleListNode<K>::getNext(){
+    return (SimpleListNode<K>*)this->_next;
+}
 
 #endif // SIMPLELISTNODE_H

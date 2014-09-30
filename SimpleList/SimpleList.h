@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/*
+ * Definition of methods.
+ */
 template <typename K>
 class SimpleList{
 public:
@@ -13,13 +16,13 @@ public:
     bool append (K pElement);
     bool remove (K pElement);
     bool ifExists (K pElement);
-    bool isEmpty();
     bool removeAt (int pIndex);
+    bool isEmpty();
     bool clear ();
+    SimpleListNode<K>* elementAt(int pIndex);
     SimpleListNode<K>* search(K pElement);
     SimpleListNode<K>* getHead();
     SimpleListNode<K>* getTail();
-    SimpleListNode<K>* elementAt(int pIndex);
     int indexOf(K pElement);
     bool deleteHead();
     void describe();
@@ -31,25 +34,46 @@ private:
     SimpleListNode<K>* _tail;
 };
 
+/*!
+ * Simple list constructor
+ */
 template <typename K> SimpleList<K>::SimpleList(){
     this->_head = 0 ;
     this->_lenght= 0;
     this->_tail = 0;
 }
 
+/*
+ * Methods implementation
+ */
 
+/*!
+ * Template::bool::IsEmpty
+ */
 template <typename K>
 bool SimpleList<K>::isEmpty(){ return this->_lenght == 0;}
 
+/*!
+ * Template::uint::getLenght
+ */
 template <typename K>
 unsigned int SimpleList<K>::getLenght(){return this->_lenght;}
 
+/*!
+ * Template::uint::getLenght
+ */
 template <typename K>
 SimpleListNode<K>* SimpleList<K>::getHead(){return this->_head;}
 
+/*!
+ * Template::SimpleListNode::getTail
+ */
 template <typename K>
 SimpleListNode<K>* SimpleList<K>::getTail(){return this->_tail;}
 
+/*!
+ * Template::SimpleListNode::search
+ */
 template <typename K>
 SimpleListNode<K>* SimpleList<K>::search(K pElement){
     if (this->_lenght == 0){
@@ -70,6 +94,9 @@ SimpleListNode<K>* SimpleList<K>::search(K pElement){
     }
 }
 
+/*!
+ * Template::bool::ifExist
+ */
 template <typename K>
 bool SimpleList<K>::ifExists(K pElement){
     if (this->_lenght == 0){
@@ -89,6 +116,9 @@ bool SimpleList<K>::ifExists(K pElement){
     return false;
 }
 
+/*!
+ * Template::bool::append
+ */
 template <typename K>
 bool SimpleList<K>::append(K pElement){
     if (this->_lenght == 0){
@@ -109,6 +139,9 @@ bool SimpleList<K>::append(K pElement){
     return false;
 }
 
+/*!
+ * Template::bool::remove
+ */
 template <typename K>
 bool SimpleList<K>::remove(K pElement){
     if (this->_lenght == 0){
@@ -152,6 +185,9 @@ bool SimpleList<K>::remove(K pElement){
     }
 }
 
+/*!
+ * Template::SimpleListNode*::ElementAt
+ */
 template <typename K>
 SimpleListNode<K>* SimpleList<K>::elementAt(int pIndex){
     if (this->_lenght == 0){
@@ -174,6 +210,9 @@ SimpleListNode<K>* SimpleList<K>::elementAt(int pIndex){
     }
 }
 
+/*!
+ * Template::int::indexOf
+ */
 template <typename K>
 int SimpleList<K>::indexOf(K pElement){
     if (this->_lenght == 0){
@@ -194,6 +233,9 @@ int SimpleList<K>::indexOf(K pElement){
     }
 }
 
+/*!
+ * Template::bool::removeAt
+ */
 template <typename K>
 bool SimpleList<K>::removeAt (int pIndex){
     if (this->_lenght == 0){
@@ -236,6 +278,9 @@ bool SimpleList<K>::removeAt (int pIndex){
     }
 }
 
+/*!
+ * Template::bool::clear
+ */
 template <typename K >
 bool SimpleList<K>::clear(){
     while (this->_lenght != 0){
@@ -244,6 +289,9 @@ bool SimpleList<K>::clear(){
     return true;
 }
 
+/*!
+ * Template::bool::deleteHead
+ */
 template <typename K>
 bool SimpleList<K>::deleteHead(){
     if ( this->getLenght() == 0){
@@ -261,6 +309,9 @@ bool SimpleList<K>::deleteHead(){
     return true;
 }
 
+/*!
+ * Template::void::describe
+ */
 template <typename K>
 void SimpleList<K>::describe(){
     cout << "Head: " << *this->_head->getElement() <<"\n"
@@ -273,6 +324,9 @@ void SimpleList<K>::describe(){
        cout << "\n";
 }
 
+/*!
+ * Template::void::sort
+ */
 template <typename K>
 void SimpleList<K>::sort(){
     K swap;

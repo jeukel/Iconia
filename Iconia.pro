@@ -4,11 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    videoInput.cpp \
     main.cpp \
     scan_load.cpp \
     genetico/genetico.cpp \
-    genetico/mutatron.cpp
+    genetico/mutatron.cpp \
+    constants/constants.cpp
 
 HEADERS += \
     scan_load.h \
@@ -16,7 +16,8 @@ HEADERS += \
     genetico/mutatron.h \
     SimpleList/SimpleList.h \
     SimpleList/SimpleListNode.h \
-    SimpleList/interfaceNode.h
+    SimpleList/interfaceNode.h \
+    constants/constants.h
 
 INCLUDEPATH += /usr/local/include/opencv
 LIBS += -L/usr/local/lib
