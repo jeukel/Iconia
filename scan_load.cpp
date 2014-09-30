@@ -42,6 +42,8 @@ int scan_load::scan()
     //GaussianBlur(K, K, cv::Size(7,7), 1.5, 1.5);
     //GaussianBlur(L, L, cv::Size(7,7), 1.5, 1.5);
 
+    constants* K9 = new constants();
+
     //**************************************************//
     // Scan by row and cols
     for(int i = 0; i < K.rows ; i++){
@@ -67,7 +69,7 @@ int scan_load::scan()
                 Genetico* gen = new Genetico(fitness);
 
                 short bestfit;
-                bestfit = gen->start(constants.Generations,constants.Density);
+                bestfit = gen->start(K9->Generations,K9->Density);
 
                 L.at<Vec3b>(i,j)[0] = (unsigned char) bestfit;
 

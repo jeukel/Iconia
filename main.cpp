@@ -11,7 +11,14 @@ using namespace std;
 
 int main()
 {
-    scan_load* sl_pic = new scan_load(&constants.path00, &constants.path01);
+    //constants* K = new constants();
+    //scan_load* sl_pic = new scan_load(K->path00, K->path01);
+    string dir0 = "/home/jeukel/ownCloud/TEC/" +
+                  "EclipseWorkspace/Iconia/img/win.png";
+    string dir1 = "/home/jeukel/ownCloud/TEC/" +
+                  "EclipseWorkspace/Iconia/img/fail.png";
+    scan_load* sl_pic = new scan_load(&dir0, &dir1);
     sl_pic->scan();
     return 0;
+
 }

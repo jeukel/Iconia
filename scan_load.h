@@ -17,7 +17,7 @@ using namespace cv;
 class scan_load
 {
 public:
-    scan_load(string *Ppath00,string *Ppath01);
+    scan_load(string *Ppath00, string *Ppath01);
     int scan();
 private:
     string path00;
